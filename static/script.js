@@ -18,12 +18,18 @@ function submitAttendance() {
         },
         body: JSON.stringify(attendanceData),
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            return response.text().then(text => {throw new Error(text)});
+        }
+        return response.json();
+    })
     .then(data => {
         alert('Attendance saved successfully!');
     })
     .catch(error => {
         console.error('Error:', error);
+        alert('An error occurred while saving attendance.');
     });
 }
 
@@ -39,4 +45,3 @@ function updateDate() {
 
 // Call the function to set the date on page load
 updateDate();
-
