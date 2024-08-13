@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, jsonify
 from openpyxl import load_workbook
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='frontend')  # Set 'frontend' as the template folder
 
-# Define the path to the workbook, ensuring it works on Render
+# Load the existing Excel workbook
 workbook_path = os.path.join(os.path.dirname(__file__), 'data', 'attendance.xlsx')
 workbook = load_workbook(workbook_path)
 sheet = workbook.active
@@ -16,17 +16,16 @@ def index():
 @app.route('/save_attendance', methods=['POST'])
 def save_attendance():
     data = request.json
-    date_day = data.pop('date')  # Extract date/day from the JSON data
+    date_day = data.pop('date')
 
     # Check if the date/day already exists in the sheet
     date_column = None
-    for col in range(3, sheet.max_column + 1):  # Columns 1 and 2 are fixed for USN and Student Name
+    for col in range(3, sheet.max_column + 1):
         if sheet.cell(row=1, column=col).value == date_day:
             date_column = col
             break
 
-    if date_column is None:
-        # If the date/day does not exist, create a new column
+    if (date_column is None):
         date_column = sheet.max_column + 1
         sheet.cell(row=1, column=date_column).value = date_day
 
@@ -43,5 +42,4 @@ def save_attendance():
     return jsonify({'message': 'Attendance saved successfully!'})
 
 if __name__ == '__main__':
-    # Ensure the app runs on the correct host and port for Render
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
