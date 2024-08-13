@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 from openpyxl import load_workbook
-from openpyxl.utils import get_column_letter
+import os
 
 app = Flask(__name__)
 
-# Load the existing Excel workbook or create a new one
-workbook_path = 'attendance.xlsx'
+# Define the path to the workbook, ensuring it works on Render
+workbook_path = os.path.join(os.path.dirname(__file__), 'data', 'attendance.xlsx')
 workbook = load_workbook(workbook_path)
 sheet = workbook.active
 
@@ -43,5 +43,5 @@ def save_attendance():
     return jsonify({'message': 'Attendance saved successfully!'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    # Ensure the app runs on the correct host and port for Render
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
