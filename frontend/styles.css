@@ -1,1 +1,166 @@
+.date-box {
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #303030;
+    margin-bottom: 25px;
+    border: 1.2px solid #303030;
+}
 
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #54ebff, #c738ff)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    color: #9c3cf1;
+    text-shadow: 2px 1px 0px #fffb00,
+        4px 2px 0px #9c3cf1;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 450px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+.attendance-table th {
+    border: 1.7px solid #000000;
+    padding: 6px 15px 6px 15px;
+    font-size: 19px;
+    color: #ffffff;
+    font-weight: 999;
+}
+
+.attendance-table td {
+    border: 1.7px solid #000000;
+    padding: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.attendance-table td:nth-child(3) {
+    text-align: left;
+}
+
+.attendance-table th:nth-child(1),
+.attendance-table td:nth-child(1) {
+    width: 0px;
+    padding: 3px;
+}
+
+.attendance-table th:nth-child(2){
+    width: 0;
+}
+.attendance-table th:nth-child(4){
+    padding: 8px;
+}
+
+.attendance-table td:nth-child(4),
+.attendance-table td:nth-child(5) {
+    width: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.attendance-table td:nth-child(1) {
+    width: 5%;
+}
+
+.attendance-table th {
+    background-color: #ff2222;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.button-group input[type="radio"] {
+    margin: 0;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.button-group input[type="radio"][value="Present"] {
+    accent-color: rgb(21, 159, 21);
+}
+
+.button-group input[type="radio"][value="Absent"] {
+    accent-color: red;
+}
+
+
+/* BUTTON CSS */
+.button-73 {
+    appearance: none;
+    background-color: #ffffff;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: #bcbcbc 0 -8px 9px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    font-family: -apple-system, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 30px auto 20px auto;
+    outline: none;
+    padding: 1rem 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-73:hover {
+    background-color: #4fb22e;
+    box-shadow: #1f611f 0 -6px 8px inset;
+    transform: scale(1.125);
+    color: #ffffff;
+}
+
+.button-73:active {
+    transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+    .button-73 {
+        font-size: 1.5rem;
+        padding: .75rem 2rem;
+    }
+}
+
+button {
+    margin-top: 20px;
+}
