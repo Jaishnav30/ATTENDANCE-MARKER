@@ -4,4 +4,3 @@ services:
     env: python
     buildCommand: pip install -r backend/requirements.txt
     startCommand: python backend/app.py
-
