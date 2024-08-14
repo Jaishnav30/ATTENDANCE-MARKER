@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 # Setup Google Sheets API credentials
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('path_to_your_service_account.json', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('attendance-marker-432505-71a0825f97b4.json', scope)
 client = gspread.authorize(creds)
 
 # Open the Google Sheet
-sheet = client.open("Your Google Sheet Name").sheet1
+sheet = client.open("ATTENDANCE-DATA").sheet1
 
 @app.route('/')
 def home():
