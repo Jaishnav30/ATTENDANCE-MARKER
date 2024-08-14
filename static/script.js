@@ -38,8 +38,7 @@ function updateDate() {
     const today = new Date();
     
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    //const currentDate = today.toLocaleDateString('en-US', options);
-    const currentDate = 'Thursday, August 15, 2024';
+    const currentDate = today.toLocaleDateString('en-US', options);
     
     dateBox.innerText = currentDate;
 }
