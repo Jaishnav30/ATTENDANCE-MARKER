@@ -10,7 +10,7 @@ app = Flask(__name__)
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # Path to the service account JSON key file
-SERVICE_ACCOUNT_FILE = '.json'
+SERVICE_ACCOUNT_FILE = 'attendance-marker-432505-8e5cf4d3181b.json'
 
 # Authenticate and create a client
 credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
