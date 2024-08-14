@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "attendance-marker-432505",
+  "private_key_id": "8e5cf4d3181b123db62e7ca0b51e0377389bcb07",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDbv4KgfKtScn2+\ne/FrryzrJrTijaKb3zxVG75FGjNOixInAXHlaovKTFzKcnQHOUWEylDcgulRmeyn\nDZf6Lh0oxFvGhfTeZrfqc0VuCve/tKZZosP0Pgjc52w4RkYPAVmSXFvxC369f3kn\nKoesCssXDidBNMe9+qzZIb03WD12UYkR/UkzfxkHEw0xz2t+dyh96MYbUr6d1ef6\nl0vH1IczWScifGaymoIusIzE2Ls0t93BC58pu0TqH4guPZBXytA68Q4yJJGDN4lH\nU3/Kgep+PWVR5ICFmG3rZHKRkiBPsbjO6M6HcsFD7r54l5DBvSz+vtjbRdzFRcaw\nFfytooNzAgMBAAECggEABSG/ULUooRfIZPrrA+tG3sT8I3BQVFiNxaUMt/tpKFPq\nHBwWB1gKJLLM1fN/Ty3guD2rTsMF5OB13N7d5jtOdgXD6Op28fyvHdwMSooaCBGV\ncvFwpxMNzO7goZ3OhAoxh8/9W687ifxgnXAKVBO6c3LiqsyrP34LrFRz4Ud/w/QP\nbMLpJR6OyvLlR6pXZxFqdv8G8BvczEhNDGCWAg5R2MpsNlATb9kNzPxPZIpQkE0P\nRVjyb4ORlpDNiK/NPfffkTd3rRfMYfLbrVAMP/zmzkSQfX8VHQVSQUMdhN2LbU2G\ni8O84l59U8AJlibt/rJTabChwdE7AfNmMo7k7z6cyQKBgQD0DkYyecuHmv/qW1sT\ncFuEbiYvLxaf65EPdimoNNs/IXaYoOw6y198tz0KtbPb4RQ1u1tMxBGJAxkc/mrY\nd3wbLYRZPl/q5TNdtLC8oflS0Ricf6ZtJu1zKac9etfMEkkQKab4vFmvSpM3Kjwu\nfV00kObzq12g3Q75xRLigM8X2wKBgQDmgLCqKjy9lEVHCl7BXSvcMaH72EetRBuk\nopjlc/mMdoimovfVm2CMMUPGKUlRoiZcxKtsf0ECNxRzzX+ZY4INRR5G9wi7ZocI\n1ixpVKqU+MT7U0aWfR8EBqyZ3pl/AHLNut7fZKs6PrY2vGo+8/M6v0tRP8yqGtPW\nivx/GL8CSQKBgQCmi7MlsO3OjVzE3jDptAwP9GcEXfrviP7F8Vn+GovfqgNXpsFu\nYei4oAb87wBdNVzoSgHFAiwBNucFXS0mqWs81LPzfthP4LdL5AmTwGj3Ng+4hHfb\nFuyFYVBqaREohvXrHLGAHnCJabfKtny5MP3Q6G1irXfIVfJpSi5X+ZTZbwKBgQDF\nUYjqQnn4uAKOC9yNntq7BmnqE31YX6NiTiag1aTcj2PvcjbCTt5ZZJrl+dXf4fUB\nGQK+QDlAUjJZ56LBhiOAhJikmziIY/5YnC8sg+P63vKRSvp0POveIHCEz7+KrrGY\nV84OYjkKBUEqniQ9e8vNkJBDH2BuhcSuNhBsJJzusQKBgQDaX5yVUOqbTnpoVh4x\npP5kx35REKti1cDrP0kOJ3OxIM5CJVXUDWCNBxND46ESYMXG5s/R1Txa9F7RiarK\ngKj6P/u5EElZ3me+m9TULdAigvXgeTdhBnxs/MPXqUqbpCKIIxGPRsfvrHJ5CHxo\nZbrfcgpNcb6cwSFKrkds7+s12Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "attendance-marker-service-acco@attendance-marker-432505.iam.gserviceaccount.com",
+  "client_id": "103127272235086245679",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/attendance-marker-service-acco%40attendance-marker-432505.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
