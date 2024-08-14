@@ -16,6 +16,10 @@ gc = gspread.authorize(credentials)
 # Your Spreadsheet ID
 SPREADSHEET_ID = '1oGcwqT-uqHmPRqq8acR7-w8RitnEA4Rd4_juVjs1ZMw'
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/save_attendance', methods=['POST'])
 def save_attendance():
     try:
