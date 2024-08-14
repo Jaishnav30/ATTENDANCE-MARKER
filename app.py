@@ -1,28 +1,20 @@
-from flask import Flask, render_template, request, jsonify
 import pandas as pd
-import os
 import gspread
 from google.oauth2.service_account import Credentials
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
 # Define the scope
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-
-# Path to the service account JSON key file
-SERVICE_ACCOUNT_FILE = 'attendance-marker-432505-8e5cf4d3181b.json'
+SERVICE_ACCOUNT_FILE = 'path/to/your/service_account.json'
 
 # Authenticate and create a client
 credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 gc = gspread.authorize(credentials)
 
 # Your Spreadsheet ID
-SPREADSHEET_ID = '1oGcwqT-uqHmPRqq8acR7-w8RitnEA4Rd4_juVjs1ZMw'
-
-@app.route('/')
-def home():
-    # Render the main page with your HTML template
-    return render_template('index.html')
+SPREADSHEET_ID = 'your_spreadsheet_id'
 
 @app.route('/save_attendance', methods=['POST'])
 def save_attendance():
@@ -35,12 +27,32 @@ def save_attendance():
 
         # Open the Google Spreadsheet
         sheet = gc.open_by_key(SPREADSHEET_ID).sheet1
+        
+        # Convert JSON data to DataFrame
+        attendance_data = pd.DataFrame(list(data.items()), columns=['Student', 'Attendance'])
 
-        # Convert the data to a list
-        attendance_data = [list(data.values())]
+        # Read existing data from Google Sheets into a DataFrame
+        existing_data = pd.DataFrame(sheet.get_all_records())
 
-        # Append the data to the spreadsheet
-        sheet.append_row(attendance_data[0])
+        # Extract fixed columns
+        if 'USN' not in existing_data.columns:
+            existing_data['USN'] = ''
+        if 'Student Name' not in existing_data.columns:
+            existing_data['Student Name'] = ''
+
+        # Process the date
+        date_column = data.get('date')
+        if date_column not in existing_data.columns:
+            existing_data[date_column] = ''
+
+        # Update attendance data
+        for _, row in attendance_data.iterrows():
+            student = row['Student']
+            attendance = row['Attendance']
+            existing_data.loc[existing_data['Student Name'] == student, date_column] = attendance
+
+        # Update Google Sheets
+        sheet.update([existing_data.columns.tolist()] + existing_data.values.tolist())
 
         return jsonify({'message': 'Attendance saved successfully!'})
 
@@ -49,5 +61,4 @@ def save_attendance():
         return jsonify({'error': 'An error occurred while saving attendance'}), 500
 
 if __name__ == '__main__':
-    # Run the application on all addresses with port 8000
     app.run(host='0.0.0.0', port=8000, debug=True)
