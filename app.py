@@ -7,14 +7,14 @@ app = Flask(__name__)
 
 # Define the scope
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'path/to/your/service_account.json'
+SERVICE_ACCOUNT_FILE = 'attendance-marker-432505-8e5cf4d3181b.json'
 
 # Authenticate and create a client
 credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 gc = gspread.authorize(credentials)
 
 # Your Spreadsheet ID
-SPREADSHEET_ID = 'your_spreadsheet_id'
+SPREADSHEET_ID = '1oGcwqT-uqHmPRqq8acR7-w8RitnEA4Rd4_juVjs1ZMw'
 
 @app.route('/save_attendance', methods=['POST'])
 def save_attendance():
